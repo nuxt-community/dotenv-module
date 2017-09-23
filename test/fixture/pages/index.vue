@@ -3,6 +3,8 @@
     foo:{{foo}}
     bar:{{bar}}
     baz:{{baz}}
+    more1:{{more1}}
+    more2:{{more2}}
 </div>
 </template>
 
@@ -13,6 +15,8 @@ export default {
             foo: process.env.foo,
             bar: process.env.bar,
             baz: process.env.baz,
+            more1: process.env.more1,
+            more2: process.env.more2,
         }
     }
 }

@@ -9,6 +9,8 @@ module.exports = {
     resourceHints: false
   },
   modules: [
-    ['~/../..', {}]
+    ['~/../..', {
+      only: ['baz', 'foo', 'more1']
+    }]
   ]
 }

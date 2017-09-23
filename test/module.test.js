@@ -40,4 +40,10 @@ describe('Module', () => {
     let html = await get('/')
     expect(html).not.toContain('foo:baz')
   })
+
+  test('When an only array is passed, the variables not included should not be loaded', async () => {
+    let html = await get('/')
+    expect(html).toContain('more1:yep')
+    expect(html).not.toContain('more2:nope')
+  })
 })

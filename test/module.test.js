@@ -29,8 +29,15 @@ describe('Module', () => {
     await nuxt.close()
   })
 
-  test('render', async () => {
+  test('Variables from the .env file should have been loaded', async () => {
     let html = await get('/')
-    expect(html).toContain('Works!')
+    expect(html).toContain('foo:bar')
+    expect(html).toContain('bar:baz')
+    expect(html).toContain('baz:foo')
+  })
+
+  test('Variables from the .env file should NOT override existing values from nuxt.config.js', async () => {
+    let html = await get('/')
+    expect(html).not.toContain('foo:baz')
   })
 })

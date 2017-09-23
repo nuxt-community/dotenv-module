@@ -1,6 +1,6 @@
-import fs from 'fs'
-import path from 'path'
-import dotenv from 'dotenv'
+import { readFileSync } from 'fs'
+import { join } from 'path'
+import { parse } from 'dotenv'
 
 const defaultOptions = {
   only: [],
@@ -9,8 +9,8 @@ const defaultOptions = {
 export default function DotEnvModule (moduleOptions) {
   const options = Object.assign({}, defaultOptions, moduleOptions)
 
-  const envFilePath = path.join(this.options.srcDir, '/.env')
-  const envConfig = dotenv.parse(fs.readFileSync(envFilePath))
+  const envFilePath = join(this.options.srcDir, '/.env')
+  const envConfig = parse(readFileSync(envFilePath))
 
   const isAllowed = key => {
     return options.only.length === 0 || options.only.includes(key)

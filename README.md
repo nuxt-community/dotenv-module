@@ -2,9 +2,9 @@
 
 [![npm (scoped with tag)](https://img.shields.io/npm/v/nuxtjs-dotenv-module/latest.svg?style=flat-square)](https://npmjs.com/package/nuxtjs-dotenv-module)
 [![npm](https://img.shields.io/npm/dt/nuxtjs-dotenv-module.svg?style=flat-square)](https://npmjs.com/package/nuxtjs-dotenv-module)
-[![CircleCI](https://img.shields.io/circleci/project/github/julientant/nuxtjs-dotenv-module.svg?style=flat-square)](https://circleci.com/gh/julientant/nuxtjs-dotenv-module)
-[![Codecov](https://img.shields.io/codecov/c/github/julientant/nuxtjs-dotenv-module.svg?style=flat-square)](https://codecov.io/gh/julientant/nuxtjs-dotenv-module)
-[![Dependencies](https://david-dm.org/julientant/nuxtjs-dotenv-module/status.svg?style=flat-square)](https://david-dm.org/julientant/nuxtjs-dotenv-module)
+[![CircleCI](https://img.shields.io/circleci/project/github/JulienTant/nuxtjs-dotenv-module.svg?style=flat-square)](https://circleci.com/gh/JulienTant/nuxtjs-dotenv-module)
+[![Codecov](https://img.shields.io/codecov/c/github/JulienTant/nuxtjs-dotenv-module.svg?style=flat-square)](https://codecov.io/gh/JulienTant/nuxtjs-dotenv-module)
+[![Dependencies](https://david-dm.org/JulienTant/nuxtjs-dotenv-module/status.svg?style=flat-square)](https://david-dm.org/JulienTant/nuxtjs-dotenv-module)
 
 
 [![js-standard-style](https://cdn.rawgit.com/standard/standard/master/badge.svg)](http://standardjs.com)
@@ -15,7 +15,7 @@
 
 ## Features
 
-The module features
+The module loads variables from your .env file directly into your nuxt.js application. 
 
 ## Setup
 - Add `nuxtjs-dotenv-module` dependency using yarn or npm to your project
@@ -24,11 +24,7 @@ The module features
 ```js
 {
   modules: [
-    // Simple usage
-    'nuxtjs-dotenv-module',
-
-    // With options
-    ['nuxtjs-dotenv-module', { /* module options */ }],
+    'nuxtjs-dotenv-module'
  ]
 }
 ```

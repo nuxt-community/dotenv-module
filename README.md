@@ -39,7 +39,7 @@ After creating your .env file in the project root, simply run your usual `npm ru
 
 if for some reason you want to restrict what's accessible into the context, you can can pass to the module options an `only` array with the keys you want to allow.
 
-```json
+```js
 {
   modules: [
     ['nuxtjs-dotenv-module', {only: ['some_key']}],

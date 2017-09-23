@@ -15,7 +15,7 @@
 
 ## Features
 
-The module loads variables from your .env file directly into your nuxt.js application. 
+The module loads variables from your .env file directly into your nuxt.js application `context` and `process.env`. 
 
 ## Setup
 - Add `nuxtjs-dotenv-module` dependency using yarn or npm to your project
@@ -24,14 +24,28 @@ The module loads variables from your .env file directly into your nuxt.js applic
 ```js
 {
   modules: [
-    'nuxtjs-dotenv-module'
+    // Simple usage
+    'nuxtjs-dotenv-module',
+
+    // With options
+    ['nuxtjs-dotenv-module', { /* module options */ }],
  ]
 }
 ```
 
 ## Usage
 
-Module Description
+After creating your .env file in the project root, simply run your usual `npm run dev`. The variable inside the .env file will be added to the context (`context.env`) and process (`process.env`)
+
+if for some reason you want to restrict what's accessible into the context, you can can pass to the module options an `only` array with the keys you want to allow.
+
+```json
+{
+  modules: [
+    ['nuxtjs-dotenv-module', {only: ['some_key']}],
+  ]
+}
+```
 
 ## License
 

@@ -1,0 +1,49 @@
+{
+  "name": "nuxtjs-dotenv-module",
+  "version": "0.0.1",
+  "description": "A nuxt.js module that loads your .env file into your context options",
+  "license": "MIT",
+  "contributors": [
+    {
+      "name": "Julien Tant <julien@craftyx.fr>"
+    }
+  ],
+  "main": "dist/index.js",
+  "repository": "https://github.com/julientant/nuxtjs-dotenv-module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "nuxt-module",
+    "watch": "nuxt-module --watch",
+    "lint": "eslint lib src test",
+    "lint-fix": "eslint --fix lib src test",
+    "test": "NODE_ENV=test npm run build && npm run lint && jest",
+    "release": "standard-version && git push --follow-tags && npm publish",
+    "prepare": "npm run build"
+  },
+  "eslintIgnore": [
+    "*.template.*"
+  ],
+  "files": [
+    "lib",
+    "src",
+    "dist",
+    "templates"
+  ],
+  "jest": {
+    "testEnvironment": "node",
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "lib",
+      "src"
+    ]
+  },
+  "dependencies": {
+    "dotenv": "^4.0.0"
+  },
+  "devDependencies": {
+    "nuxt-module-builder": "latest"
+  }
+}

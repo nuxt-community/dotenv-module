@@ -10,13 +10,17 @@
 
 <script>
 export default {
+    asyncData({env}) {
+      return {
+          more1: env.more1,
+          more2: env.more2
+      }
+    },
     data() {
         return {
             foo: process.env.foo,
             bar: process.env.bar,
-            baz: process.env.baz,
-            more1: process.env.more1,
-            more2: process.env.more2,
+            baz: process.env.baz
         }
     }
 }

@@ -1,7 +1,7 @@
 # nuxtjs-dotenv-module
 
-[![npm (scoped with tag)](https://img.shields.io/npm/v/nuxtjs-dotenv-module/latest.svg?style=flat-square)](https://npmjs.com/package/nuxtjs-dotenv-module)
-[![npm](https://img.shields.io/npm/dt/nuxtjs-dotenv-module.svg?style=flat-square)](https://npmjs.com/package/nuxtjs-dotenv-module)
+[![npm (scoped with tag)](https://img.shields.io/npm/v/nuxtjs-dotenv-module/latest.svg?style=flat-square)](https://npmjs.com/package/@nuxtjs/dotenv)
+[![npm](https://img.shields.io/npm/dt/nuxtjs-dotenv-module.svg?style=flat-square)](https://npmjs.com/package/@nuxtjs/dotenv)
 [![CircleCI](https://img.shields.io/circleci/project/github/nuxt-community/dotenv-module.svg?style=flat-square)](https://circleci.com/gh/nuxt-community/dotenv-module)
 [![Codecov](https://img.shields.io/codecov/c/github/nuxt-community/dotenv-module.svg?style=flat-square)](https://codecov.io/gh/nuxt-community/dotenv-module)
 [![Dependencies](https://david-dm.org/nuxt-community/dotenv-module/status.svg?style=flat-square)](https://david-dm.org/nuxt-community/dotenv-module)
@@ -18,17 +18,17 @@
 The module loads variables from your .env file directly into your nuxt.js application `context` and `process.env`. 
 
 ## Setup
-- Add `nuxtjs-dotenv-module` dependency using yarn or npm to your project
-- Add `nuxtjs-dotenv-module` to `modules` section of `nuxt.config.js`
+- Add `@nuxtjs/dotenv` dependency using yarn or npm to your project
+- Add `@nuxtjs/dotenv` to `modules` section of `nuxt.config.js`
 
 ```js
 {
   modules: [
     // Simple usage
-    'nuxtjs-dotenv-module',
+    '@nuxtjs/dotenv',
 
     // With options
-    ['nuxtjs-dotenv-module', { /* module options */ }],
+    ['@nuxtjs/dotenv', { /* module options */ }],
  ]
 }
 ```
@@ -42,7 +42,7 @@ if for some reason you want to restrict what's accessible into the context, you 
 ```js
 {
   modules: [
-    ['nuxtjs-dotenv-module', {only: ['some_key']}],
+    ['@nuxtjs/dotenv', { only: ['some_key'] }],
   ]
 }
 ```

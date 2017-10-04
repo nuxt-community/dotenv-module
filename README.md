@@ -47,6 +47,23 @@ if for some reason you want to restrict what's accessible into the context, you 
 }
 ```
 
+## Using .env file in nuxt.config.js
+
+The `dotenv-module` won't overload the environment variables of the process running your build.
+
+If you need to use variables from your .env file at this moment, just append `require('dotenv').config()` to your `nuxt.config.js` :
+
+```js
+require('dotenv').config()
+
+module.exports = {
+    // your usual nuxt config.
+}
+```
+
+This will works thanks to the `dotenv` library provided by this module as a dependency. If you decided to ignore some values from your `.env` file in the module configuration, this won't apply here.
+
+
 ## License
 
 [MIT License](./LICENSE)

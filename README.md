@@ -47,7 +47,7 @@ if for some reason you want to restrict what's accessible into the context, you 
 }
 ```
 
-## Using .env file in nuxt.config.js
+## Using .env file in nuxt.config.js
 
 The `dotenv-module` won't overload the environment variables of the process running your build.
 

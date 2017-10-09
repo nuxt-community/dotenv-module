@@ -2,14 +2,15 @@ import { readFileSync } from 'fs'
 import { join } from 'path'
 import { parse } from 'dotenv'
 
-const defaultOptions = {
-  only: [],
-}
-
 export default function DotEnvModule (moduleOptions) {
+  const defaultOptions = {
+    only: [],
+    path: this.options.srcDir
+  }
+
   const options = Object.assign({}, defaultOptions, moduleOptions)
 
-  const envFilePath = join(this.options.srcDir, '/.env')
+  const envFilePath = join(options.path, '/.env')
   const envConfig = parse(readFileSync(envFilePath))
 
   const isAllowed = key => {

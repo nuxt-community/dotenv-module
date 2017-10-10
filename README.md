@@ -63,7 +63,7 @@ By default, the we'll be loading the `.env` file from the root of your project. 
 }
 ```
 
-Note that this is the path to the **folder** where the `.env` file live, not the the `.env` file itself.
+Note that this is the path to the **folder** where the `.env` file live, not to the `.env` file itself.
 
 The path can be absolute or relative.
 

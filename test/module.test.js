@@ -5,27 +5,20 @@ process.env.NODE_ENV = 'production'
 const { Nuxt, Builder } = require('nuxt')
 const request = require('request-promise-native')
 
-const config = require('./fixture/nuxt.config')
-
 const url = path => `http://localhost:${process.env.PORT}${path}`
 const get = path => request(url(path))
 
 describe('Module', () => {
+  const config = require('./fixture/module/nuxt.config')
   let nuxt
 
   beforeAll(async () => {
-    config.modules.unshift(function () {
-      // Add test specific test only hooks on nuxt life cycle
-    })
-
-    // Build a fresh nuxt
     nuxt = new Nuxt(config)
     await new Builder(nuxt).build()
     await nuxt.listen(process.env.PORT)
   })
 
   afterAll(async () => {
-    // Close all opened resources
     await nuxt.close()
   })
 
@@ -45,5 +38,24 @@ describe('Module', () => {
     let html = await get('/')
     expect(html).toContain('more1:yep')
     expect(html).not.toContain('more2:nope')
+  })
+})
+
+describe('Path to .env', () => {
+  const config = require('./fixture/path_to_env/nuxt.config')
+  let nuxt
+  beforeAll(async () => {
+    nuxt = new Nuxt(config)
+    await new Builder(nuxt).build()
+    await nuxt.listen(process.env.PORT)
+  })
+
+  afterAll(async () => {
+    await nuxt.close()
+  })
+
+  test('Variables from the alternative .env file should have been loaded', async () => {
+    let html = await get('/')
+    expect(html).toContain('foo:baz')
   })
 })

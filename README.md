@@ -37,7 +37,11 @@ The module loads variables from your .env file directly into your nuxt.js applic
 
 After creating your .env file in the project root, simply run your usual `npm run dev`. The variable inside the .env file will be added to the context (`context.env`) and process (`process.env`)
 
-if for some reason you want to restrict what's accessible into the context, you can can pass to the module options an `only` array with the keys you want to allow.
+## Options
+
+### only
+
+If you want to restrict what's accessible into the context, you can can pass to the module options an `only` array with the keys you want to allow.
 
 ```js
 {
@@ -46,6 +50,22 @@ if for some reason you want to restrict what's accessible into the context, you 
   ]
 }
 ```
+
+### path
+
+By default, the we'll be loading the `.env` file from the root of your project. If you want to change the path of the folder where we can find the `.env` file, then use the `path` option.
+
+```js
+{
+  modules: [
+    ['@nuxtjs/dotenv', { path: '/path/to/my/global/env/' }],
+  ]
+}
+```
+
+Note that this is the path to the **folder** where the `.env` file live, not the the `.env` file itself.
+
+The path can be absolute or relative.
 
 ## Using .env file in nuxt.config.js
 

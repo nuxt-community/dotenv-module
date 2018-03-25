@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+<a name="1.1.1"></a>
+## [1.1.1](https://github.com/nuxt-community/dotenv-module/compare/v1.1.0...v1.1.1) (2018-03-25)
+
+- Don't crash when .env file is not present
+
 <a name="1.1.0"></a>
 ## [1.1.0](https://github.com/nuxt-community/dotenv-module/compare/v1.0.0...v1.1.0) (2017-10-10)
 

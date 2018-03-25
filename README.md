@@ -1,7 +1,7 @@
-# nuxtjs-dotenv-module
+# @nuxtjs/dotenv module
 
-[![npm (scoped with tag)](https://img.shields.io/npm/v/nuxtjs-dotenv-module/latest.svg?style=flat-square)](https://npmjs.com/package/@nuxtjs/dotenv)
-[![npm](https://img.shields.io/npm/dt/nuxtjs-dotenv-module.svg?style=flat-square)](https://npmjs.com/package/@nuxtjs/dotenv)
+[![npm (scoped with tag)](https://img.shields.io/npm/v/@nuxtjs/dotenv/latest.svg?style=flat-square)](https://npmjs.com/package/@nuxtjs/dotenv)
+[![npm](https://img.shields.io/npm/dt/@nuxtjs/dotenv.svg?style=flat-square)](https://npmjs.com/package/@nuxtjs/dotenv)
 [![CircleCI](https://img.shields.io/circleci/project/github/nuxt-community/dotenv-module.svg?style=flat-square)](https://circleci.com/gh/nuxt-community/dotenv-module)
 [![Codecov](https://img.shields.io/codecov/c/github/nuxt-community/dotenv-module.svg?style=flat-square)](https://codecov.io/gh/nuxt-community/dotenv-module)
 [![Dependencies](https://david-dm.org/nuxt-community/dotenv-module/status.svg?style=flat-square)](https://david-dm.org/nuxt-community/dotenv-module)

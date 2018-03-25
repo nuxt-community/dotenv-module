@@ -59,3 +59,22 @@ describe('Path to .env', () => {
     expect(html).toContain('foo:baz')
   })
 })
+
+describe('no .env file', () => {
+  const config = require('./fixture/no_env_file/nuxt.config')
+  let nuxt
+  beforeAll(async () => {
+    nuxt = new Nuxt(config)
+    await new Builder(nuxt).build()
+    await nuxt.listen(process.env.PORT)
+  })
+
+  afterAll(async () => {
+    await nuxt.close()
+  })
+
+  test('when no .env file, variable from system env should be loaded', async () => {
+    let html = await get('/')
+    expect(html).toContain('foo:oof')
+  })
+})

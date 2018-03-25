@@ -4504,7 +4504,7 @@ number-is-nan@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
 
-nuxt-module-builder@latest:
+nuxt-module-builder@0.0.2:
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/nuxt-module-builder/-/nuxt-module-builder-0.0.2.tgz#1f79d076ffedc7fe6eee63d2bcada078d17c66b1"
   dependencies:

@@ -1,6 +1,6 @@
 {
   "name": "@nuxtjs/dotenv",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A nuxt.js module that loads your .env file into your context options",
   "license": "MIT",
   "contributors": [
@@ -44,6 +44,6 @@
     "dotenv": "^5.0.0"
   },
   "devDependencies": {
-    "nuxt-module-builder": "latest"
+    "nuxt-module-builder": "0.0.2"
   }
 }

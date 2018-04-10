@@ -41,7 +41,7 @@
     ]
   },
   "dependencies": {
-    "dotenv": "^5.0.0"
+    "dotenv-safe": "^5.0.1"
   },
   "devDependencies": {
     "nuxt-module-builder": "0.0.2"

@@ -18,7 +18,7 @@
     "watch": "nuxt-module --watch",
     "lint": "eslint lib src test",
     "lint-fix": "eslint --fix lib src test",
-    "test": "NODE_ENV=test npm run build && npm run lint && jest",
+    "test": "NODE_ENV=test npm run build && jest",
     "release": "standard-version && git push --follow-tags && npm publish",
     "prepare": "npm run build"
   },
@@ -41,7 +41,7 @@
     ]
   },
   "dependencies": {
-    "dotenv": "^5.0.0"
+    "dotenv-safe": "^5.0.1"
   },
   "devDependencies": {
     "nuxt-module-builder": "0.0.2"

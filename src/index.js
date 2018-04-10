@@ -1,23 +1,24 @@
-import { readFileSync, accessSync, constants as fsconstants } from 'fs'
+import { accessSync, constants as fsconstants } from 'fs'
 import { join } from 'path'
-import { parse } from 'dotenv'
+import { config } from 'dotenv-safe'
 
 export default function DotEnvModule (moduleOptions) {
   const defaultOptions = {
     only: [],
-    path: this.options.srcDir
+    path: this.options.srcDir,
+    example: join(this.options.srcDir, '/.env.example')
   }
 
   const options = Object.assign({}, defaultOptions, moduleOptions)
+  const envPath = join(options.path, '/.env')
 
-  const envFilePath = join(options.path, '/.env')
   try {
-    accessSync(envFilePath, fsconstants.R_OK)
+    accessSync(envPath, fsconstants.R_OK)
   } catch (err) {
     // file not found, just return
     return
   }
-  const envConfig = parse(readFileSync(envFilePath))
+  const envConfig = config(Object.assign(options, { path: envPath })).parsed
 
   const isAllowed = key => {
     return options.only.length === 0 || options.only.includes(key)

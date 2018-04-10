@@ -18,7 +18,7 @@
     "watch": "nuxt-module --watch",
     "lint": "eslint lib src test",
     "lint-fix": "eslint --fix lib src test",
-    "test": "NODE_ENV=test npm run build && jest",
+    "test": "NODE_ENV=test npm run build && npm run lint && jest",
     "release": "standard-version && git push --follow-tags && npm publish",
     "prepare": "npm run build"
   },

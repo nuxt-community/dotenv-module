@@ -10,15 +10,15 @@ export default function DotEnvModule (moduleOptions) {
   }
 
   const options = Object.assign({}, defaultOptions, moduleOptions)
-  const envPath = join(options.path, '/.env')
 
+  const envFilePath = join(options.path, '/.env')
   try {
-    accessSync(envPath, fsconstants.R_OK)
+    accessSync(envFilePath, fsconstants.R_OK)
   } catch (err) {
     // file not found, just return
     return
   }
-  const envConfig = config(Object.assign(options, { path: envPath })).parsed
+  const envConfig = config(Object.assign(options, { path: envFilePath })).parsed
 
   const isAllowed = key => {
     return options.only.length === 0 || options.only.includes(key)

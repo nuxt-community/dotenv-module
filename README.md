@@ -71,17 +71,17 @@ The path can be absolute or relative.
 
 The `dotenv-module` won't overload the environment variables of the process running your build.
 
-If you need to use variables from your .env file at this moment, just append `require('dotenv').config()` to your `nuxt.config.js` :
+If you need to use variables from your .env file at this moment, just append `require('dotenv-safe').config()` to your `nuxt.config.js` :
 
 ```js
-require('dotenv').config()
+require('dotenv-safe').config()
 
 module.exports = {
     // your usual nuxt config.
 }
 ```
 
-This will works thanks to the `dotenv` library provided by this module as a dependency. If you decided to ignore some values from your `.env` file in the module configuration, this won't apply here.
+This will works thanks to the `dotenv-safe` library provided by this module as a dependency. If you decided to ignore some values from your `.env` file in the module configuration, this won't apply here.
 
 
 ## License

@@ -5,12 +5,13 @@ import { parse } from 'dotenv'
 export default function DotEnvModule (moduleOptions) {
   const defaultOptions = {
     only: [],
-    path: this.options.srcDir
+    path: this.options.srcDir,
+    fileName: '.env'
   }
 
   const options = Object.assign({}, defaultOptions, moduleOptions)
 
-  const envFilePath = join(options.path, '/.env')
+  const envFilePath = join(options.path, '/', options.fileName)
   try {
     accessSync(envFilePath, fsconstants.R_OK)
   } catch (err) {

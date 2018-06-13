@@ -5,7 +5,8 @@ import { parse } from 'dotenv'
 export default function DotEnvModule (moduleOptions) {
   const defaultOptions = {
     only: [],
-    path: this.options.srcDir
+    path: this.options.srcDir,
+    filename: '.env'
   }
 
   const options = Object.assign({}, defaultOptions, moduleOptions)

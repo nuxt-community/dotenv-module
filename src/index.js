@@ -2,7 +2,7 @@ import { readFileSync, accessSync, constants as fsconstants } from 'fs'
 import { join } from 'path'
 import { parse } from 'dotenv'
 
-export default function DotEnvModule (moduleOptions) {
+export default function DotEnvModule(moduleOptions) {
   const defaultOptions = {
     only: [],
     path: this.options.srcDir,
@@ -11,7 +11,7 @@ export default function DotEnvModule (moduleOptions) {
 
   const options = Object.assign({}, defaultOptions, moduleOptions)
 
-  const envFilePath = join(options.path, '/.env')
+  const envFilePath = join(options.path, filename)
   try {
     accessSync(envFilePath, fsconstants.R_OK)
   } catch (err) {

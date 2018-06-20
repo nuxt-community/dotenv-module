@@ -11,7 +11,7 @@ export default function DotEnvModule(moduleOptions) {
 
   const options = Object.assign({}, defaultOptions, moduleOptions)
 
-  const envFilePath = join(options.path, filename)
+  const envFilePath = join(options.path, options.filename)
   try {
     accessSync(envFilePath, fsconstants.R_OK)
   } catch (err) {

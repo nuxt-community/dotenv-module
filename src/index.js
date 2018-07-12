@@ -5,7 +5,8 @@ import { parse } from 'dotenv'
 export default function DotEnvModule (moduleOptions) {
   const defaultOptions = {
     only: [],
-    path: this.options.srcDir
+    path: this.options.srcDir,
+    systemvars: false
   }
 
   const options = Object.assign({}, defaultOptions, moduleOptions)
@@ -17,10 +18,19 @@ export default function DotEnvModule (moduleOptions) {
     // file not found, just return
     return
   }
+
   const envConfig = parse(readFileSync(envFilePath))
 
   const isAllowed = key => {
     return options.only.length === 0 || options.only.includes(key)
+  }
+
+  if (systemvars) {
+    Object.keys(process.env).map(key => {
+      if(!key in envConfig) {
+        envConfig[key] = process.env[key]
+      }
+    })
   }
 
   Object.keys(envConfig).forEach((key) => {

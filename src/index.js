@@ -25,7 +25,7 @@ export default function DotEnvModule (moduleOptions) {
     return options.only.length === 0 || options.only.includes(key)
   }
 
-  if (systemvars) {
+  if (options.systemvars) {
     Object.keys(process.env).map(key => {
       if(!key in envConfig) {
         envConfig[key] = process.env[key]

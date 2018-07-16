@@ -67,6 +67,18 @@ Note that this is the path to the **folder** where the `.env` file live, not to 
 
 The path can be absolute or relative.
 
+### filename
+
+We can override the filename when we need to use different config files for different environments.
+
+```js
+{
+  modules: [
+    ['@nuxtjs/dotenv', { filename: '.env.prod' }],
+  ]
+}
+```
+
 ## Using .env file in nuxt.config.js
 
 The `dotenv-module` won't overload the environment variables of the process running your build.

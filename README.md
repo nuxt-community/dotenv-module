@@ -107,6 +107,12 @@ module.exports = {
 
 This will works thanks to the `dotenv` library provided by this module as a dependency. If you decided to ignore some values from your `.env` file in the module configuration, this won't apply here.
 
+## Development
+ 
+- Fork and Clone this repository
+- Install dependencies using `yarn`
+- Start development server using `yarn run dev`
+- Launch tests with `yarn run test`
 
 ## License
 

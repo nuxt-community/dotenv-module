@@ -2,7 +2,7 @@ import { readFileSync, accessSync, constants as fsconstants } from 'fs'
 import { join } from 'path'
 import { parse } from 'dotenv'
 
-export default function DotEnvModule(moduleOptions) {
+export default function DotEnvModule (moduleOptions) {
   const defaultOptions = {
     only: [],
     path: this.options.srcDir,

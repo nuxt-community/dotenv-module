@@ -78,3 +78,22 @@ describe('no .env file', () => {
     expect(html).toContain('foo:oof')
   })
 })
+
+describe('.env file name', () => {
+  const config = require('./fixture/env_file_name/nuxt.config')
+  let nuxt
+  beforeAll(async () => {
+    nuxt = new Nuxt(config)
+    await new Builder(nuxt).build()
+    await nuxt.listen(process.env.PORT)
+  })
+
+  afterAll(async () => {
+    await nuxt.close()
+  })
+
+  test('Variables from .env.two file should have been loaded', async () => {
+    let html = await get('/')
+    expect(html).toContain('foo:bar2')
+  })
+})

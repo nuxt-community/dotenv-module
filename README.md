@@ -63,6 +63,10 @@ By default, the we'll be loading the `.env` file from the root of your project. 
 }
 ```
 
+Note that this is the path to the **folder** where the `.env` file live, not to the `.env` file itself.
+
+The path can be absolute or relative.
+
 ### systemvars
 
 By default this is false and variables from your system will be ignored. Setting this to true will allow your system set variables to work.
@@ -74,10 +78,6 @@ By default this is false and variables from your system will be ignored. Setting
   ]
 }
 ```
-
-Note that this is the path to the **folder** where the `.env` file live, not to the `.env` file itself.
-
-The path can be absolute or relative.
 
 ### filename
 

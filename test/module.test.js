@@ -97,3 +97,22 @@ describe('.env file name', () => {
     expect(html).toContain('foo:bar2')
   })
 })
+
+describe('merged configuration', () => {
+  const config = require('./fixture/merged_configuration/nuxt.config')
+  let nuxt
+  beforeAll(async () => {
+    nuxt = new Nuxt(config)
+    await new Builder(nuxt).build()
+    await nuxt.listen(process.env.PORT)
+  })
+
+  afterAll(async () => {
+    await nuxt.close()
+  })
+
+  test('Variables from .env.two file should have been loaded', async () => {
+    let html = await get('/')
+    expect(html).toContain('foo:bar2')
+  })
+})

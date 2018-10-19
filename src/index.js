@@ -10,7 +10,7 @@ export default function DotEnvModule (moduleOptions) {
     systemvars: false
   }
 
-  const options = Object.assign({}, defaultOptions, moduleOptions)
+  const options = Object.assign({}, defaultOptions, this.options.dotenv, moduleOptions)
 
   const envFilePath = join(options.path, options.filename)
   try {

@@ -4,46 +4,38 @@
   "description": "A nuxt.js module that loads your .env file into your context options",
   "license": "MIT",
   "contributors": [
-    {
-      "name": "Julien Tant <julien@craftyx.fr>"
-    }
+    "Julien Tant <julien@craftyx.fr>"
   ],
-  "main": "dist/index.js",
-  "repository": "https://github.com/nuxt-community/dotenv-module",
+  "main": "lib/module.js",
+  "repository": "nuxt-community/dotenv-module",
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
-    "build": "nuxt-module",
-    "watch": "nuxt-module --watch",
-    "lint": "eslint lib src test",
-    "lint-fix": "eslint --fix lib src test",
-    "test": "NODE_ENV=test npm run build && npm run lint && jest",
-    "release": "standard-version && git push --follow-tags && npm publish",
-    "prepare": "npm run build"
+    "dev": "nuxt test/fixture/basic",
+    "lint": "eslint --ext .js,.vue lib test",
+    "test": "yarn lint && jest",
+    "release": "yarn test && standard-version && git push --follow-tags && npm publish"
   },
-  "eslintIgnore": [
-    "*.template.*"
-  ],
   "files": [
-    "lib",
-    "src",
-    "dist",
-    "templates"
+    "lib"
   ],
-  "jest": {
-    "testEnvironment": "node",
-    "coverageDirectory": "./coverage/",
-    "collectCoverage": true,
-    "collectCoverageFrom": [
-      "lib",
-      "src"
-    ]
-  },
   "dependencies": {
-    "dotenv": "^6.0.0"
+    "consola": "^2.9.0",
+    "dotenv": "^8.0.0"
   },
   "devDependencies": {
-    "nuxt-module-builder": "0.0.2"
+    "@commitlint/cli": "latest",
+    "@commitlint/config-conventional": "latest",
+    "@nuxtjs/eslint-config": "latest",
+    "codecov": "latest",
+    "eslint": "latest",
+    "get-port": "latest",
+    "husky": "latest",
+    "jest": "latest",
+    "nuxt-edge": "latest",
+    "request": "latest",
+    "request-promise-native": "latest",
+    "standard-version": "latest"
   }
 }

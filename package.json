@@ -27,13 +27,13 @@
   "devDependencies": {
     "@commitlint/cli": "latest",
     "@commitlint/config-conventional": "latest",
-    "@nuxtjs/eslint-config": "latest",
+    "@nuxtjs/eslint-config": "^1.1.2",
     "codecov": "latest",
-    "eslint": "latest",
+    "eslint": "^6.3.0",
     "get-port": "latest",
-    "husky": "latest",
-    "jest": "latest",
-    "nuxt-edge": "latest",
+    "husky": "^3.0.5",
+    "jest": "^24.9.0",
+    "nuxt-edge": "^2.10.0-26138890.0e0149d8",
     "request": "latest",
     "request-promise-native": "latest",
     "standard-version": "latest"

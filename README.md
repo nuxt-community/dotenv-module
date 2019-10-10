@@ -19,14 +19,16 @@ The module loads variables from your .env file directly into your nuxt.js applic
 1. Add `@nuxtjs/dotenv` dependency to your project
 
 ```bash
-yarn add @nuxtjs/dotenv # or npm install @nuxtjs/dotenv
+yarn add --dev @nuxtjs/dotenv # or npm install --save-dev @nuxtjs/dotenv
 ```
 
-2. Add `@nuxtjs/dotenv` to the `modules` section of `nuxt.config.js`
+2. Add `@nuxtjs/dotenv` to the `buildModules` section of `nuxt.config.js`
+
+:warning: If you are using Nuxt older than **v2.9** you have to install module as a `dependency` (No `--dev` or `--save-dev` flags) and also use `modules` section in `nuxt.config.js` instead of `buildModules`.
 
 ```js
-{
-  modules: [
+export default {
+  buildModules: [
     // Simple usage
     '@nuxtjs/dotenv',
 
@@ -39,8 +41,8 @@ yarn add @nuxtjs/dotenv # or npm install @nuxtjs/dotenv
 ### Using top level options
 
 ```js
-{
-  modules: [
+export default {
+  buildModules: [
     '@nuxtjs/dotenv'
   ],
   dotenv: {
@@ -53,13 +55,15 @@ yarn add @nuxtjs/dotenv # or npm install @nuxtjs/dotenv
 
 ### `only`
 
+- Type: `Array[String]`
 - Default: `null`
 
-If you want to restrict what's accessible into the context, you can can pass to the module options an `only` array with the keys you want to allow.
+If you want to restrict what's accessible into the context,
+you can can pass to the module options an `only` array with the keys you want to allow.
 
 ```js
-{
-  modules: [
+export default {
+  buildModules: [
     ['@nuxtjs/dotenv', { only: ['some_key'] }]
   ]
 }
@@ -67,13 +71,15 @@ If you want to restrict what's accessible into the context, you can can pass to 
 
 ### `path`
 
+- Type: `String`
 - Default: `srcDir`
 
-By default, the we'll be loading the `.env` file from the root of your project. If you want to change the path of the folder where we can find the `.env` file, then use the `path` option.
+By default, the we'll be loading the `.env` file from the root of your project.
+If you want to change the path of the folder where we can find the `.env` file, then use the `path` option.
 
 ```js
-{
-  modules: [
+export default {
+  buildModules: [
     ['@nuxtjs/dotenv', { path: '/path/to/my/global/env/' }]
   ]
 }
@@ -85,14 +91,15 @@ The path can be absolute or relative.
 
 ### systemvars
 
+- Type: `Boolean`
 - Default: `false`
 
 By default this is false and variables from your system will be ignored.
 Setting this to true will allow your system set variables to work.
 
 ```js
-{
-  modules: [
+export default {
+  buildModules: [
     ['@nuxtjs/dotenv', { systemvars: true }]
   ]
 }
@@ -100,13 +107,14 @@ Setting this to true will allow your system set variables to work.
 
 ### filename
 
+- Type: `String`
 - Default: `.env`
 
 We can override the filename when we need to use different config files for different environments.
 
 ```js
-{
-  modules: [
+export default {
+  buildModules: [
     ['@nuxtjs/dotenv', { filename: '.env.prod' }]
   ]
 }
@@ -115,31 +123,25 @@ We can override the filename when we need to use different config files for diff
 ## Usage
 
 After creating your .env file in the project root, simply run your usual `yarn dev` or `npm run dev`.
-The variable inside the .env file will be added to the context (`context.env`) and process (`process.env`)
+The variable inside the .env file will be added to the context (`context.env`) and process (`process.env`).
 
 ## Using .env file in nuxt.config.js
 
 This module won't overload the environment variables of the process running your build.
 
 If you need to use variables from your .env file at this moment,
-just append `require('dotenv').config()` to your `nuxt.config.js` :
+just append `require('dotenv').config()` to your `nuxt.config.js`:
 
 ```js
 require('dotenv').config()
 
-module.exports = {
+export default {
   // your usual nuxt config.
 }
 ```
 
 This will works thanks to the `dotenv` library provided by this module as a dependency.
 If you decided to ignore some values from your `.env` file in the module configuration, this won't apply here.
-
-## Development
-
-1. Clone this repository
-2. Install dependencies using `yarn install` or `npm install`
-3. Start development server using `npm run dev`
 
 ## License
 

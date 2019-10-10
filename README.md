@@ -6,7 +6,7 @@
 [![Codecov][codecov-src]][codecov-href]
 [![License][license-src]][license-href]
 
-> A nuxt.js module that loads your .env file into your context options
+> A Nuxt.js module that loads your .env file into your context options
 
 [📖 **Release Notes**](./CHANGELOG.md)
 

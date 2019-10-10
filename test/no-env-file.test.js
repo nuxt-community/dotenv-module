@@ -1,5 +1,4 @@
-const { Nuxt, Builder } = require('nuxt-edge')
-const getPort = require('get-port')
+const { setup, loadConfig, get } = require('@nuxtjs/module-test-utils')
 const logger = require('../lib/logger')
 
 logger.mockTypes(() => jest.fn())
@@ -8,10 +7,7 @@ describe('no .env file', () => {
   let nuxt
 
   beforeAll(async () => {
-    nuxt = new Nuxt(require('./fixture/no-env-file/nuxt.config'))
-    await nuxt.ready()
-    await new Builder(nuxt).build()
-    await nuxt.listen(await getPort())
+    ({ nuxt } = await setup(loadConfig(__dirname, 'no-env-file')))
   }, 60000)
 
   afterAll(async () => {
@@ -23,7 +19,7 @@ describe('no .env file', () => {
   })
 
   test('when no .env file, variable from system env should be loaded', async () => {
-    const { html } = await nuxt.renderRoute('/')
+    const html = await get('/')
     expect(html).toContain('foo: oof')
   })
 })

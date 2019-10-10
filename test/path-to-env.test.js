@@ -1,14 +1,10 @@
-const { Nuxt, Builder } = require('nuxt-edge')
-const getPort = require('get-port')
+const { setup, loadConfig, get } = require('@nuxtjs/module-test-utils')
 
 describe('path to .env', () => {
   let nuxt
 
   beforeAll(async () => {
-    nuxt = new Nuxt(require('./fixture/path-to-env/nuxt.config'))
-    await nuxt.ready()
-    await new Builder(nuxt).build()
-    await nuxt.listen(await getPort())
+    ({ nuxt } = await setup(loadConfig(__dirname, 'path-to-env')))
   }, 60000)
 
   afterAll(async () => {
@@ -16,7 +12,7 @@ describe('path to .env', () => {
   })
 
   test('variables from the alternative .env file should have been loaded', async () => {
-    const { html } = await nuxt.renderRoute('/')
+    const html = await get('/')
     expect(html).toContain('foo: baz')
   })
 })

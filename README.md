@@ -59,7 +59,7 @@ export default {
 - Default: `null`
 
 If you want to restrict what's accessible into the context,
-you can can pass to the module options an `only` array with the keys you want to allow.
+you can pass to the module options an `only` array with the keys you want to allow.
 
 ```js
 export default {

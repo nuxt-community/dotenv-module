@@ -130,7 +130,7 @@ The variable inside the .env file will be added to the context (`context.env`) a
 This module won't overload the environment variables of the process running your build.
 
 If you need to use variables from your .env file at this moment,
-just append `require('dotenv').config()` to your `nuxt.config.js`:
+just prepend `require('dotenv').config()` to your `nuxt.config.js`:
 
 ```js
 require('dotenv').config()

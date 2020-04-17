@@ -24,7 +24,7 @@ yarn add --dev @nuxtjs/dotenv # or npm install --save-dev @nuxtjs/dotenv
 
 2. Add `@nuxtjs/dotenv` to the `buildModules` section of `nuxt.config.js`
 
-:warning: If you are using Nuxt older than **v2.9** you have to install module as a `dependency` (No `--dev` or `--save-dev` flags) and also use `modules` section in `nuxt.config.js` instead of `buildModules`.
+:warning: If you are using a Nuxt version previous than **v2.9** you have to install module as a `dependency` (No `--dev` or `--save-dev` flags) and also use `modules` section in `nuxt.config.js` instead of `buildModules`.
 
 ```js
 export default {

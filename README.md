@@ -10,6 +10,8 @@
 
 [📖 **Release Notes**](./CHANGELOG.md)
 
+:warning: With Nuxt v2.13 you might want to migrate from @nuxtjs/dotenv module to use the [new runtime config](https://nuxtjs.org/blog/moving-from-nuxtjs-dotenv-to-runtime-config.)
+
 ## Features
 
 The module loads variables from your .env file directly into your nuxt.js application `context` and `process.env`.

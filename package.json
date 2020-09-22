@@ -17,7 +17,7 @@
     "test": "yarn lint && jest"
   },
   "dependencies": {
-    "consola": "^2.11.3",
+    "consola": "^2.15.0",
     "dotenv": "^8.2.0"
   },
   "devDependencies": {

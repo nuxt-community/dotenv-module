@@ -1,6 +1,13 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [1.4.2](https://github.com/nuxt-community/dotenv-module/compare/v1.4.1...v1.4.2) (2023-12-15)
+
+
+### Bug Fixes
+
+* **typo:** removed twicly noted can ([#47](https://github.com/nuxt-community/dotenv-module/issues/47)) ([003d890](https://github.com/nuxt-community/dotenv-module/commit/003d8903d951eb8b41f5a6211ce366c28972c1cb))
 
 <a name="1.3.0"></a>
 ## [1.3.0](https://github.com/nuxt-community/dotenv-module/compare/v1.1.1...v1.3.0) (2018-07-12)

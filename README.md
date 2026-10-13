@@ -1,3 +1,6 @@
+> [!NOTE]
+> This repository is archived. `@nuxtjs/dotenv` was built for Nuxt 2, which reached end of life on June 30, 2024. Nuxt 3+ reads [`.env` files](https://nuxt.com/docs/guide/directory-structure/env) out of the box.
+
 # @nuxtjs/dotenv
 
 [![npm version][npm-version-src]][npm-version-href]
